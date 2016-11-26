@@ -1,0 +1,187 @@
+Linguagem de programação
+Origem: Wikipédia, a enciclopédia livre.
+Trecho de programa na linguagem de programação C.
+
+Uma linguagem de programação é um método padronizado para comunicar instruções para um computador.[1] É um conjunto de regras sintáticas e semânticas usadas para definir um programa de computador.[2][Nota 1] Permite que um programador especifique precisamente sobre quais dados um computador vai atuar, como estes dados serão armazenados ou transmitidos e quais ações devem ser tomadas sob várias circunstâncias. Linguagens de programação podem ser usadas para expressar algoritmos com precisão.
+
+O conjunto de palavras (lexemas classificados em tokens), compostos de acordo com essas regras, constituem o código fonte de um software.[3] Esse código fonte é depois traduzido para código de máquina, que é executado pelo processador.[3]
+
+Uma das principais metas das linguagens de programação é que programadores tenham uma maior produtividade, permitindo expressar suas intenções mais facilmente do que quando comparado com a linguagem que um computador entende nativamente (código de máquina).[4] Assim, linguagens de programação são projetadas para adotar uma sintaxe de nível mais alto, que pode ser mais facilmente entendida por programadores humanos. Linguagens de programação são ferramentas importantes para que programadores e engenheiros de software possam escrever programas mais organizados e com maior rapidez.
+
+Linguagens de programação também tornam os programas menos dependentes de computadores ou ambientes computacionais específicos (propriedade chamada de portabilidade[5]). Isto acontece porque programas escritos em linguagens de programação são traduzidos para o código de máquina do computador no qual será executado em vez de ser diretamente executado. Uma meta ambiciosa do Fortran, uma das primeiras linguagens de programação, era esta independência da máquina onde seria executada.[6][7]
+
+Índice
+
+    1 História
+    2 Interpretação e compilação
+    3 Conceitos
+        3.1 Programação estruturada
+        3.2 Programação modular
+        3.3 Programação orientada a objetos
+        3.4 Programação linear
+    4 Classificação
+        4.1 Classificação da ACM
+        4.2 Quanto ao paradigma
+            4.2.1 Paradigmas Imperativos
+            4.2.2 Paradigmas Declarativos
+        4.3 Quanto a estrutura de tipos
+        4.4 Quanto ao grau de abstração
+        4.5 Quanto à geração
+    5 Lista de linguagens
+    6 Notas
+    7 Referências
+    8 Bibliografia
+    9 Ver também
+    10 Ligações externas
+
+História
+Ada Lovelace em 1840.
+Grace Hopper em 1984.
+
+O primeiro trabalho de linguagem de programação foi criado por Ada Lovelace, grande amiga de Charles Babbage.[8] O projeto da primeira calculadora mecânica programável foi idealizado por Charles Babbage[9] que, após gastar fortunas e um longo tempo, não conseguiu concretizar o projeto.[10] A linguagem de programação ADA foi batizada em homenagem a esta primeira programadora.[11]
+
+Uma das primeiras linguagens de programação para computadores foi provavelmente Plankalkül, criada por Konrad Zuse na Alemanha Nazista,[12] mas que teve pouco ou nenhum impacto no futuro das linguagens de programação.
+
+O primeiro compilador foi escrito por Grace Hopper,[13] em 1952, para a linguagem de programação A-0.[14] A primeira linguagem de programação de alto nível amplamente usada foi Fortran, criada em 1954.[14][15] Em 1957 foi criada B-0, sucessora da A-0, que daria origem a Flow-Matic (1958), antecessor imediato de COBOL, de 1959.[16] O COBOL foi uma linguagem de ampla aceitação para uso comercial.[16] A linguagem ALGOL foi criada em 1958-1960[17] O ALGOL-60 teve grande influência no projeto de muitas linguagens posteriores.[18]
+
+A linguagem Lisp foi criada em 1958 e se tornou amplamente utilizada na pesquisa na área de ciência da computação mais proeminentemente na área de Inteligência Artificial.[19] Outra linguagem relacionada ao campo da IA que surge em 1972 é a linguagem Prolog, uma linguagem do paradigma lógico.[20]
+
+A orientação a objetos é outro marco importante na história das linguagens de programação. A linguagem Simula 67 introduz o conceito de classes.[21] A linguagem Smalltalk[22][23] expande o conceito de classes e se torna a primeira linguagem de programação que oferecia suporte completo à programação orientada a objetos.[24] A linguagem C++ (originalmente conhecida como C com classes) populariza a orientação a objetos.[25]
+
+Diversas linguagens de programação surgiram desde então. Entre estas incluem-se C♯,[26] VB.NET, Java, Object Pascal, Objective-C, PHP, Python,[27] SuperCollider, linguagem D[28] e Ruby.[29][Nota 2]
+Interpretação e compilação
+O processo da compilação.
+
+Uma linguagem de programação pode ser convertida, ou traduzida, em código de máquina por compilação ou interpretada por um processo denominado interpretação. Em ambas ocorre a tradução do código fonte para código de máquina.[30]
+
+Se o método utilizado traduz todo o texto do programa (também chamado de código), para só depois executar[Nota 3] o programa, então diz-se que o programa foi compilado e que o mecanismo utilizado para a tradução é um compilador (que por sua vez nada mais é do que um programa).[31] A versão compilada do programa tipicamente é armazenada, de forma que o programa pode ser executado um número indefinido de vezes sem que seja necessária nova compilação, o que compensa o tempo gasto na compilação. Isso acontece com linguagens como Pascal[32] e C.
+
+Se o texto do programa é executado à medida que vai sendo traduzido, como em JavaScript, BASIC, Python ou Perl, num processo de tradução de trechos seguidos de sua execução imediata, então diz-se que o programa foi interpretado e que o mecanismo utilizado para a tradução é um interpretador. Programas interpretados são geralmente mais lentos do que os compilados, mas são também geralmente mais flexíveis, já que podem interagir com o ambiente mais facilmente.[33]
+
+Embora haja essa distinção entre linguagens interpretadas e compiladas, as coisas nem sempre são tão simples. Há linguagens compiladas para um código de máquina virtual (sendo esta máquina virtual apenas mais um software, que emula a máquina virtual sendo executado em uma máquina real), como Java[34] (compila para a plataforma Java[35]) e C♯ (compila para a plataforma CLI[36]). E também há outras formas de interpretar em que os códigos fontes, ao invés de serem interpretados linha-a-linha, têm blocos "compilados" para a memória, de acordo com as necessidades, o que aumenta a performance dos programas quando os mesmos módulos são chamados várias vezes, técnica esta conhecida como JIT.
+
+Como exemplo, podemos citar a linguagem Java. Nela, um compilador traduz o código java para o código intermediário (e portável) da JVM. As JVMs originais interpretavam esse código, de acordo com o código de máquina do computador hospedeiro, porém atualmente elas compilam, segundo a técnica JIT o código JVM para código hospedeiro.
+
+A tradução é tipicamente feita em várias fases, sendo as mais comuns a análise léxica, a análise sintática (ou parsing), a geração de código e a otimização.[37] Em compiladores também é comum a geração de código intermediário.[Nota 4]
+Conceitos
+Programação estruturada
+
+Programação estruturada é uma forma de programação de computadores que preconiza que todos os programas possíveis podem ser reduzidos a apenas três estruturas: sequência, decisão e repetição.[38] Um dos primeiros a preconizar a programação estruturada foi Haskell B. Curry[39][Nota 5] Tendo, na prática, sido transformada na Programação modular, a Programação estruturada orienta os programadores para a criação de estruturas simples em seus programas, usando as sub-rotinas e as funções. Foi a forma dominante na criação de software entre a programação linear e a programação orientada por objetos.[40] Apesar de ter sido sucedida pela programação orientada por objetos, pode-se dizer que a programação estruturada ainda é marcantemente influente, uma vez que grande parte das pessoas ainda aprendem programação através dela. Porém, a orientação a objetos superou o uso das linguagens estruturadas no mercado.[41]
+Programação modular
+Niklaus Wirth em 2005. Criador da linguagem Pascal entre outras.
+
+Programação modular é uma forma de programação no qual o desenvolvimento das rotinas de programação é feito através de módulos, que são interligados entre si através de uma interface comum.[42] Foi apresentado originalmente pela Information & Systems Institute, Inc. no National Symposium on Modular Programming em 1968, com a liderança de Larry Constantine. Exemplos de linguagens que orientaram seu projeto para este aspecto estão as linguagens Modula-2,[43][44] desenvolvida por Niklaus Wirth e a Modula-3.[45].
+Programação orientada a objetos
+
+Orientação a objetos, também conhecida como Programação Orientada a Objetos (POO), ou ainda em inglês Object-Oriented Programming (OOP) é um paradigma de análise, projeto e programação de sistemas de software baseado na composição e interação entre diversas unidades de software chamadas de objetos. O extensivo uso de objetos, particularmente em conjunção com o mecanismo de herança, caracteriza o estilo de programação orientada a objetos.[46] Em alguns contextos, prefere-se usar modelagem orientada ao objeto (UML), em vez de programação. De fato, o paradigma "orientação a objetos" tem bases conceituais e origem no campo de estudo da cognição, que influenciou a área de inteligência artificial e da lingüística no campo da abstração de conceitos do mundo real. Na qualidade de método de modelagem, é tida como a melhor estratégia, e mais natural, para se eliminar o "gap semântico", dificuldade recorrente no processo de modelar o mundo real, no domínio do problema, em um conjunto de componentes de software que seja o mais fiel na sua representação deste domínio. Facilitaria a comunicação do profissional modelador e do usuário da área alvo, na medida em que a correlação da simbologia e conceitos abstratos do mundo real e da ferramenta de modelagem (conceitos, terminologia, símbolos, grafismo e estratégias) fosse a mais óbvia, natural e exata possível. A análise e projeto orientados a objetos tem como meta identificar o melhor conjunto de objetos para descrever um sistema de software.[47] O funcionamento deste sistema se dá através do relacionamento e troca de mensagens entre estes objetos. Na programação orientada a objetos, implementa-se um conjunto de classes que definem os objetos presentes no sistema de software. Cada classe determina o comportamento (definido nos métodos) e estados possíveis (atributos) de seus objetos, assim como o relacionamento com outros objetos.[42]
+Programação linear
+
+Em matemática, problemas de Programação Linear são problemas de otimização nos quais a função objetivo e as restrições são todas lineares.[48] Programação Linear é uma importante área da otimização por várias razões. Muitos problemas práticos em pesquisa operacional podem ser expressos como problemas de programação linear. Certos casos especiais de programação linear, tais como problemas de network flow e problemas de multicommodity flow são considerados importantes o suficiente para que se tenha gerado muita pesquisa em algoritmos especializados para suas soluções. Vários algoritmos para outros tipos de problemas de otimização funcionam resolvendo problemas de PL como sub-problemas. Historicamente, ideias da programação linear inspiraram muitos dos conceitos centrais de teoria da otimização, tais como dualidade, decomposição, e a importância da convexidade e suas generalizações.
+Classificação
+
+As linguagens de programação podem ser classificadas e sub-classificadas de várias formas.
+Classificação da ACM
+
+A ACM mantém um sistema de classificação[49] com os seguintes sub-itens:
+
+    Linguagens aplicativas, ou de aplicação
+    Linguagens concorrentes, distribuídas e paralelas
+    Linguagens de fluxo de dados
+    Linguagens de projeto
+    Linguagens extensíveis
+    Linguagens de montagem e de macro
+    Linguagens de microprogramação
+    Linguagens não determinísticas
+    Linguagens não procedurais
+    Linguagens orientadas a objeto
+    Linguagens de aplicação especializada
+    Linguagens de altíssimo nível[Nota 6]
+
+Quanto ao paradigma
+Ver artigo principal: Paradigma de programação
+
+Diferentes linguagens de programação podem ser agrupadas segundo o paradigma que seguem para abordar a sua sintaxe e semântica. Os paradigmas se dividem em dois grandes grupos: imperativo e declarativo.[50]
+Paradigmas Imperativos
+
+Os paradigmas imperativos são aqueles que facilitam a computação por meio de mudanças de estado.[50] Se dividem em:
+
+    O paradigma procedural. Neste paradigma, os programas são executados através de chamadas sucessivas a procedimentos separados. Exemplos de linguagens deste paradigma são o Fortran e o BASIC.
+    O paradigma de estruturas de blocos.[50] A característica marcante deste paradigma são os escopos aninhados. Exemplos de linguagens deste paradigma são o Algol 60, Pascal[32] e C.
+    O paradigma de orientação a objetos. Este paradigma descreve linguagens que suportam a interação entre objetos. Exemplos de linguagens deste paradigma são C++,[25], linguagem D,[51] Java, Python[27] e Ruby.[29]
+    O paradigma da computação distribuída. Este paradigma suporta que mais de uma rotina possa executar independentemente.[52] Um exemplos de linguagem deste paradigma é a linguagem Ada.
+
+Paradigmas Declarativos
+
+Os paradigmas declarativos são aqueles nos quais um programa especifica uma relação ou função.[50] Se dividem em:
+
+    O paradigma funcional. Linguagens deste paradigma não incluem qualquer provisão para atribuição ou dados mutáveis[53] Na programação funcional, o mapeamento entre os valores de entrada e saída são alcançados mais diretamente. Um programa é uma função (ou grupo de funções), tipicamente constituída de outras funções mais simples.[54] Exemplos de linguagens deste paradigma são as linguagens Lisp[55], Scheme[56] e Haskell[57]
+    O paradigma da programação lógica. Este paradigma se baseia na noção de que um programa implementa uma relação ao invés de um mapeamento.[58] Exemplos de linguagens deste paradigma são o Prolog[59] e a linguagem Gödel.[60]
+
+Quanto a estrutura de tipos
+
+    Fracamente tipada, como PHP e Smalltalk, onde o tipo da variável muda dinamicamente conforme a situação.
+    Fortemente tipada, como Java e Ruby, onde o tipo da variável, uma vez atribuído, se mantém o mesmo até ser descartada da memória.[61]
+    Dinamicamente tipada, como SNOBOL, APL, Awk, Perl, Python e Ruby, onde o tipo da variável é definido em tempo de execução.[61]
+    Estaticamente tipada, como Java e C, onde o tipo da variável é definido em tempo de compilação.[62]
+
+Quanto ao grau de abstração
+
+    Linguagem de programação de baixo nível, cujos símbolos são uma representação direta do código de máquina que será gerado, onde cada comando da linguagem equivale a um "opcode" do processador, como Assembly.[63]
+    Linguagem de programação de médio nível,[Nota 7] que possui símbolos que podem ser convertidos diretamente para código de máquina (goto, expressões matemáticas, atribuição de variáveis), mas também símbolos complexos que são convertidos por um compilador. Exemplo: C, C++
+    Linguagem de programação de alto nível, composta de símbolos mais complexos, inteligível pelo ser humano e não-executável diretamente pela máquina, no nível da especificação de algoritmos, como Pascal,[32] Fortran, ALGOL,Java e SQL.[63]
+
+Quanto à geração
+
+A classificação das linguagens de programação em gerações é uma questão que apresenta divergências de autor para autor. Segundo Maclennan,[64] as linguagens se dividem em cinco gerações com as seguintes características:
+
+    Primeira geração - São linguagens onde suas estruturas de controle são aparentemente orientadas a máquina. As instruções condicionais não são aninhadas e dependem fortemente de instruções de desvio incondicional como o GOTO. Uma linguagem típica desta geração é a linguagem Fortran.[64]
+    Segunda geração - São linguagens onde as estruturas de controle são estruturadas de forma a minimizar ou dispensar o uso de instruções GOTO. A segunda geração elaborou melhor e generalizou diversas estruturas de controle das linguagens de primeira geração. Uma das grandes contribuições desta geração foi suas estruturas de nomes, que eram hierarquicamente aninhadas. Isto permitiu melhor controle de espaços de nomes e uma eficiente alocação dinâmica de memória. Uma linguagem típica desta geração é o Algol 60.[64]
+    Terceira geração - São linguagens que dão ênfase a simplicidade e eficiência. Uma linguagem típica desta geração é a linguagem Pascal.[32] As estruturas de dados desta geração mostram um deslocamento da máquina para a aplicação. As estruturas de controle são mais simples e eficientes.[64]
+    Quarta geração - Esta geração é essencialmente o sinônimo para linguagens com abstração de dados. A maioria das linguagens desta geração focam na modularização e no encapsulamento. Uma linguagem típica desta geração é a linguagem Ada.[64]
+    Quinta geração - Nesta geração, Maclennan agrupa diversos paradigmas como a orientação a objeto e o paradigma funcional, paradigma lógico.[64]
+
+Henri Bal e Dick Grune, já apresentam uma classificação em gerações de forma diferente, enfatizando mais o aspecto da aplicação. São elencadas 6 gerações.[65]
+
+    Primeira geração - linguagem de máquina.
+    Segunda geração - linguagens de montagem (assembly).
+    Terceira geração - Linguagens procedurais.
+    Quarta geração - Linguagens aplicativas.
+    Quinta geração - Linguagens voltadas a Inteligência artificial como as linguagens lógicas (Prolog) e as linguagens funcionais (Lisp).
+    Sexta geração - Redes neurais.
+
+Doris Apleby e Julius J. VandeKopple dividem as linguagens em quatro gerações que coincidem com as quatro primeiras gerações elencadas por Henri Bal e Dick Grune.[50]
+Lista de linguagens
+Livros sobre diversas linguagens de programação
+
+Existem várias linguagens de programação; de acordo com o Índice Tiobe, as 20 mais populares são:[41]
+
+    Java
+    C
+    C++
+    Python
+    C♯
+    PHP
+    Visual Basic .NET
+    JavaScript
+    Perl
+    Ruby
+    Assembly
+    Visual Basic
+    Delphi / Object Pascal
+    Swift
+    Objective-C
+    MATLAB
+    Pascal
+    R
+    PL/SQL
+    COBOL
+
+Notas
+
+Edsger Dijkstra em seu livro A Discipline of Programming assim define as linguagens de programação: "Eu vejo uma linguagem de programação principalmente como um veículo para a descrição (potencialmente muito sofisticada) de mecanismos abstratos" Dijkstra, Edsger W (1976). A Discipline of Programming (em inglês) (Englewood Cliffs, New Jersey: Prentice Hall). p. 9. ISBN 0-13-215871-X.
+Para um mapa abrangente da história das linguagens de programação ver: «Mapa da história das linguagens de programação» (em inglês). Consultado em 1 de dezembro de 2010.
+ou rodar, como se diz no jargão da computação
+Veja também Compilador.
+Citação de Knuth do memorando de Curry: "O primeiro passo no planejamento do programa é o de analisar a computação em certas partes principais, chamadas aqui de divisões, de modo que o programa possa ser sintetizado a partir delas. As partes principais devem ser tais que, ou pelo menos algumas delas, são cálculos independentes em si próprios, ou modificações desses cálculos." em: Knuth, Donald E (2003). «1-The Early Development of Programming Languages». Selected Papers on Computer Languages (em inglês) (Ventura Hall, Stanford: CSLI). p. 17. ISBN 1-57586-382-0.
+Sussman et al. menciona que as linguagens de altíssimo nível são programadas em termos de sentenças declarativas. Em: Abelson, Harold; Sussman, Gerald Jay; Sussman, Julie (1996). Structure and Interpretation of Computer Programs (em inglês) 2ª ed. (Cambridge, Massachusetts: McGraw-Hill). p. 22. ISBN 0-07-000484-6.
+Muitos autores classificam as linguagens quanto ao grau de abstração em apenas dois: alto e baixo. Alguns autores como Dennis Ritchie e Kenneth Thompson classificam algumas linguagens como C e CPL tanto como baixo nível como alto nível como em: Appleby, Doris; VandeKopple, Julius J (1997). Programming Languages. Paradigm and Practice (em inglês) 2ª ed. (New York: McGraw-Hill). p. 132-134. ISBN 0-07-005315-4.
