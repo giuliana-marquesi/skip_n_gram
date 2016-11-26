@@ -3,5 +3,18 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/orientDB"/>
+	<classpathentry kind="lib" path="lib/blueprints-core-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="lib/concurrentlinkedhashmap-lru-1.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/gremlin-groovy-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/gremlin-java-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/groovy-1.8.9.jar"/>
+	<classpathentry kind="lib" path="lib/jna-4.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/jna-platform-4.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/orientdb-client-2.1.13.jar"/>
+	<classpathentry kind="lib" path="lib/orientdb-core-2.1.13.jar"/>
+	<classpathentry kind="lib" path="lib/orientdb-enterprise-2.1.13.jar"/>
+	<classpathentry kind="lib" path="lib/orientdb-graphdb-2.1.13.jar"/>
+	<classpathentry kind="lib" path="lib/pipes-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
