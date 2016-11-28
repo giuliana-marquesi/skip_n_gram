@@ -20,11 +20,11 @@ Para a visualização dos dados e também a persistência deles. Foi escolhido o
 
 ##*- O que precisamos fazer:*
 
-- [ * ] Baixar OrientDb e criar subi-lo
-- [ * ] Criar conexão no OrientDB com Java
-- [ * ] Criar vértices e arestas de exemplo
-- [ * ] Carregar asquivos txt
-- [ * ] Separar palavras por espaços
+- [X] Baixar OrientDb e criar subi-lo
+- [X] Criar conexão no OrientDB com Java
+- [X] Criar vértices e arestas de exemplo
+- [X] Carregar asquivos txt
+- [X] Separar palavras por espaços
 - [ ] Eliminar os terminadores
 - [ ] Adicionar as palavras separadas como vértices e uni-las sequencialmente
 - [ ] Somente carregar para o BD arestas (ligações entre palavras) que ainda não existem
