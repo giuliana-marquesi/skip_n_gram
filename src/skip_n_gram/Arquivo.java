@@ -1,5 +1,5 @@
-package src.skip_n_gram;
+package skip_n_gram;
 
 public class Arquivo {
-	private texto 
+	private String texto;
 }

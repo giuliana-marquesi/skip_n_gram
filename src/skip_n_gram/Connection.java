@@ -1,35 +1,21 @@
-package src.skip_n_gram;
+package skip_n_gram;
 
-import com.tinkerpop.blueprints.Edge;
-import com.tinkerpop.blueprints.Vertex;
 import com.tinkerpop.blueprints.impls.orient.OrientGraph;
 
 public class Connection {
 	
-	private OrientGraph graph;
+	public OrientGraph graph;
 	
 	public Connection() {
 		
 		try {
-			graph = new OrientGraph("remote:localhost:2424/skip_n_gram");
+			graph = new OrientGraph("remote:localhost:2424/s_n_g", "root", "root");
 		} catch (Exception e){
 			e.printStackTrace();
 		}
 	}
-
-	public static void main(String args[]){
-		
-		try {
-			Vertex luca = graph.addVertex(null); // 1st OPERATION: IMPLICITLY BEGINS TRANSACTION
-			luca.setProperty( "name", "Luca" );
-			Vertex marko = graph.addVertex(null);
-			marko.setProperty( "name", "Marko" );
-			Edge lucaKnowsMarko = graph.addEdge(null, luca, marko, "knows");
-			graph.commit();
-			
-		} finally {
-		  graph.shutdown();
-		}
+	
+	public OrientGraph getConn() {
+		return graph;
 	}
-
 }
