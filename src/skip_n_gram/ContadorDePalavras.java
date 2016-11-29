@@ -1,4 +1,4 @@
-package src.skip_n_gram;
+package skip_n_gram;
 
 import java.io.File;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import com.tinkerpop.blueprints.impls.orient.OrientGraph;
 public class ContadorDePalavras {
 	private HashMap<String, Integer> estatistica;
 	Connection conn = new Connection();
-	OrientGraph graph = conn.getConn();
+	OrientGraph graph = conn.getConnectedGraph();
 	Vertex lastWord;
 	Vertex nextWord;
 	
