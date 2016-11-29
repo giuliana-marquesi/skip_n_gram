@@ -1,4 +1,4 @@
-package skip_n_gram;
+package src.skip_n_gram;
 
 import java.io.File;
 import java.util.HashMap;
