@@ -32,3 +32,15 @@ Para a visualização dos dados e também a persistência deles. Foi escolhido o
 - [ ] Pular palavras (skip_n_gram)
 - [ ] Exportar visualização em grafo
 - [ ] Visualização deve ser pela "intesidade" que as relações aparecem
+
+###Links OrientDB:
+
+[Vértices e Arestas na API](http://orientdb.com/docs/last/Graph-VE.html)
+
+[Gremlin API](http://orientdb.com/docs/last/Gremlin.html)
+
+[Documentacao ThinkerPop](http://tinkerpop.apache.org/)
+
+[Modelagem de dados](http://orientdb.com/docs/last/Concepts.html)
+
+[Melhorando a performance](http://orientdb.com/docs/last/Performance-Tuning.html)
