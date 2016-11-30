@@ -3,7 +3,6 @@ package skip_n_gram;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Scanner;
-import com.tinkerpop.blueprints.Edge;
 import com.tinkerpop.blueprints.Vertex;
 import com.tinkerpop.blueprints.impls.orient.OrientGraph;
 
