@@ -1,1 +1,1 @@
-oi
+alter database custom useLightweightEdges=false
