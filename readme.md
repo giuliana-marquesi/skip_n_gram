@@ -25,7 +25,7 @@ Para a visualização dos dados e também a persistência deles. Foi escolhido o
 - [X] Criar vértices e arestas de exemplo
 - [X] Carregar asquivos txt
 - [X] Separar palavras por espaços
-- [ ] Eliminar os terminadores
+- [X] Eliminar os terminadores
 - [X] Adicionar as palavras separadas como vértices e uni-las sequencialmente
 - [ ] Somente carregar para o BD arestas (ligações entre palavras) que ainda não existem
 - [ ] Contar frequencia dessa interação
