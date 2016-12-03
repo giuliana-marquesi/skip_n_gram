@@ -18,7 +18,7 @@ public class Arquivo {
 		System.out.println("foi no ler arquivo");
 		
 		try {
-			scanner = new Scanner(file).useDelimiter("\\P{L}+");
+			scanner = new Scanner(file).useDelimiter("[^\\p{javaDigit}\\p{javaLetter}]+");
 			
 			System.out.println("Scaniou");
 			while(scanner.hasNext() ){
