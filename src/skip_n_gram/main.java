@@ -1,17 +1,14 @@
 package skip_n_gram;
 
-public class main {
+import palavras.Arquivo;
 
-	public static void main(String args[]){
+public class main{
 
-		//ContadorDePalavras a = new ContadorDePalavras();
-		//String nome = "/home/aluno/teste.txt";
-		String nome = "../../miniWiki.txt";
-		//a.lerArquivo(nome);
-		//a.mostrarQtd();
-		//System.out.println(a.qtdPalavrasUnicas());
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String nome = "miniWiki.txt";
+		Arquivo arq = new Arquivo(nome);
+		arq.lerArquivo();
 	}
 
 }
-
-
