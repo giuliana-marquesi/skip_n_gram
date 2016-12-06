@@ -20,7 +20,8 @@ public class Arquivo {
 		System.out.println("foi no ler arquivo");
 		
 		try {
-			scanner = new Scanner(file);
+			scanner = new Scanner(file).useDelimiter("[^\\p{javaDigit}\\p{javaLetter}]+");
+			
 			System.out.println("Scaniou");
 			while(scanner.hasNext() ){
 				manipulador.verificaPoderIncluirNoBD(scanner.next());
