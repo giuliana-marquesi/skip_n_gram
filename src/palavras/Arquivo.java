@@ -1,7 +1,9 @@
-package skip_n_gram;
+package palavras;
 
 import java.io.File;
 import java.util.Scanner;
+
+import controller.Manipulador;
 
 public class Arquivo {
 	
@@ -35,12 +37,5 @@ public class Arquivo {
 				scanner.close();
 			}
 		}
-	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String nome = "miniWiki.txt";
-		Arquivo arq = new Arquivo(nome);
-		arq.lerArquivo();
 	}
 }
