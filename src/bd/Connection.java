@@ -15,11 +15,21 @@ public class Connection {
 		}
 	}
 	
-	public OrientGraph getConnectedGraph() {
+	public OrientGraph connectGraph() {
 		return graph;
 	}
 
 	public void closeConnection(){
 		graph.shutdown();
+	}
+
+	public void commit() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void rollback() {
+		// TODO Auto-generated method stub
+		
 	}
 }
