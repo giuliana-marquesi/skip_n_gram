@@ -1,7 +1,9 @@
-package skip_n_gram;
+package palavras;
 
 import java.io.File;
 import java.util.Scanner;
+
+import controller.Manipulador;
 
 public class Arquivo {
 	

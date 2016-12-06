@@ -1,4 +1,4 @@
-package skip_n_gram;
+package bd;
 
 import com.tinkerpop.blueprints.impls.orient.OrientGraph;
 

@@ -1,8 +1,10 @@
-package skip_n_gram;
+package controller;
 
 import com.tinkerpop.blueprints.Edge;
 import com.tinkerpop.blueprints.Vertex;
 import com.tinkerpop.blueprints.impls.orient.OrientGraph;
+
+import bd.Connection;
 
 public class Manipulador {
 	
