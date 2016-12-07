@@ -10,11 +10,16 @@ public class Manipulador {
 	private String lastWord;
 	private AccessEdge edge;
 	private AccessVertex vertex;
-	private Connection conn;
+	private OrientGraph db;
 	
 	public Manipulador(){
-		conn = new Connection();
-		conn.connectGraph();
+		try{
+			conn = new Connection();
+			conn.connectGraph();
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("deu ruim na conexao");
+		}
 	}
 
 	public void includesInSequence(String next) {
@@ -23,9 +28,9 @@ public class Manipulador {
 		
 		if (lastWord == null){
 			System.out.println("entrou no if");
-			vertex = new AccessVertex("Sequence");
+			vertex = new AccessVertex("Sequence", conn);
 			System.out.println("voltou da instanciação do vértice");
-			edge = new AccessEdge("wordsInSequence");
+			edge = new AccessEdge("wordsInSequence", conn);
 			
 			vertex.createVertex(next);
 			lastWord = next;
@@ -50,6 +55,4 @@ public class Manipulador {
 		conn.closeConnection();
 	}
 	
-	
-
 }
