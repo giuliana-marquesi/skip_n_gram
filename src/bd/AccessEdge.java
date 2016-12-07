@@ -11,11 +11,11 @@ public class AccessEdge {
 	private String edgeName;
 	private Edge edge;
 
-	public AccessEdge(String string) {
+	public AccessEdge(String string, OrientGraph db) {
 		// TODO Auto-generated constructor stub
 		System.out.println("instanciou AccessEdge. Nome da classe: "+ string);
 		
-		graph = new Connection().getGraph();
+		graph = db;
 		edgeName = string;
 		graph.createEdgeType(edgeName);
 	}

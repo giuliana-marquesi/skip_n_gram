@@ -1,8 +1,9 @@
 package controller;
 
+import com.tinkerpop.blueprints.impls.orient.OrientGraph;
+
 import bd.AccessEdge;
 import bd.AccessVertex;
-import bd.Connection;
 
 public class Manipulador {
 	
@@ -13,12 +14,10 @@ public class Manipulador {
 	private OrientGraph db;
 	
 	public Manipulador(){
-		try{
-			conn = new Connection();
-			conn.connectGraph();
-		}catch(Exception e){
+		try {
+			db = new OrientGraph("remote:localhost:2424/s_n_g");
+		} catch (Exception e){
 			e.printStackTrace();
-			System.out.println("deu ruim na conexao");
 		}
 	}
 
@@ -28,31 +27,31 @@ public class Manipulador {
 		
 		if (lastWord == null){
 			System.out.println("entrou no if");
-			vertex = new AccessVertex("Sequence", conn);
+			vertex = new AccessVertex("Sequence", db);
 			System.out.println("voltou da instanciação do vértice");
-			edge = new AccessEdge("wordsInSequence", conn);
+			edge = new AccessEdge("wordsInSequence", db);
 			
 			vertex.createVertex(next);
 			lastWord = next;
 			System.out.println("commitou primeiro vertice. anterior");
-			conn.commit();
+			db.commit();
 		}else{
 			System.out.println("entrou no else");
 			try{
 				String nextWord = next;
 				vertex.createVertex(nextWord);
 				edge.createEdge(lastWord,nextWord);
-				conn.commit();
+				db.commit();
 				lastWord = nextWord;
 			}catch(Exception e){
 				System.out.println("deu errado!");
-				conn.rollback();
+				db.rollback();
 			}
 		}
 	}
 	
 	public void desligaAConexao(){
-		conn.closeConnection();
+		db.shutdown();
 	}
 	
 }

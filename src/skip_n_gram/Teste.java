@@ -28,7 +28,6 @@ public class Teste {
 		for(i = 0; i < 10; i++){
 			graph.addVertex("class:"+nomeVertex, "word", i);
 			for( Vertex v : graph.getVertices(nomeVertex+".word", i-1)) {
-				System.out.println(nomeVertex+".word", i-1);
 				v1 = v;
 			}
 			for( Vertex v : graph.getVertices(nomeVertex+".word", i)) {

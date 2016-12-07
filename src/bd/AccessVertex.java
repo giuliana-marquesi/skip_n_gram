@@ -12,18 +12,21 @@ public class AccessVertex {
 		System.out.println("instanciou AccessEdge pelo AccesEdge");
 	}
 
-	public AccessVertex(String string) {
+	public AccessVertex(String string, OrientGraph db) {
 		// TODO Auto-generated constructor stub
 		System.out.println("instanciou AccessVertex. Nome da classe: "+ string);
-		
-		graph = new Connection().getGraph();
+		graph = db;
 		vertexName = string;
+		//graph.commit();
 		graph.createVertexType(vertexName);
+		System.out.println("criou mesmo a classe do vertice");
+		//graph.commit();
 	}
 
 	public void createVertex(String next) {
 		// TODO Auto-generated method stub
 		graph.addVertex("class:"+vertexName, "word", next);
+		//graph.commit();
 		
 	}
 	
