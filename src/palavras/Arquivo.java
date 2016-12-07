@@ -14,18 +14,29 @@ public class Arquivo {
 		this.file = new File(nome);
 	}
 	
+	private String cleaningWord(String palavra) {
+		return palavra.replaceAll("[^\\p{javaDigit}\\p{javaLetter}]+", "");
+	}
+	
+	private Boolean isWord(String palavra) {
+		return palavra.length() > 0;
+	}
+	
 	public void lerArquivo(){
 		
 		Manipulador manipulador = new Manipulador();
 		System.out.println("foi no ler arquivo");
 		
 		try {
-			scanner = new Scanner(file).useDelimiter("[^\\p{javaDigit}\\p{javaLetter}]+");
+			scanner = new Scanner(file);
 			
 			System.out.println("Scaniou");
 			while(scanner.hasNext() ){
 				System.out.println("tem palavra");
-				manipulador.includesInSequence(scanner.next());
+				String cleanWord = cleaningWord(scanner.next());
+				if(isWord(cleanWord)) {
+					manipulador.includesInSequence(cleanWord);
+				}				
 			}
 			
 		}catch(Exception e){
