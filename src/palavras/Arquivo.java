@@ -1,7 +1,9 @@
-package skip_n_gram;
+package palavras;
 
 import java.io.File;
 import java.util.Scanner;
+
+import controller.Manipulador;
 
 public class Arquivo {
 	
@@ -15,11 +17,15 @@ public class Arquivo {
 	public void lerArquivo(){
 		
 		Manipulador manipulador = new Manipulador();
+		System.out.println("foi no ler arquivo");
 		
 		try {
-			scanner = new Scanner(file);
-			while( scanner.hasNext() ){
-				manipulador.verificaPoderIncluirNoBD(scanner.next());
+			scanner = new Scanner(file).useDelimiter("[^\\p{javaDigit}\\p{javaLetter}]+");
+			
+			System.out.println("Scaniou");
+			while(scanner.hasNext() ){
+				System.out.println("tem palavra");
+				manipulador.includesInSequence(scanner.next());
 			}
 			
 		}catch(Exception e){
@@ -31,12 +37,5 @@ public class Arquivo {
 				scanner.close();
 			}
 		}
-	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String nome = "/home/usuario/Documentos/skip_n_gram/";
-		Arquivo arq = new Arquivo(nome);
-		arq.lerArquivo();
 	}
 }

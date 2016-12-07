@@ -1,0 +1,3 @@
+alter database custom useLightweightEdges=false
+
+DELETE VERTEX v BATCH 1000
