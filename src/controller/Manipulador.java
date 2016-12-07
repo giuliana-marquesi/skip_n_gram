@@ -17,10 +17,16 @@ public class Manipulador {
 		conn.connectGraph();
 	}
 
-	public void verificaPoderIncluirNoBD(String next) {
+	public void includesInSequence(String next) {
 		// TODO Auto-generated method stub
-		System.out.println(next);
+		System.out.println("Palavra no manipulador sequence: " + next);
+		
 		if (lastWord == null){
+			System.out.println("entrou no if");
+			vertex = new AccessVertex("Sequence");
+			System.out.println("voltou da instanciação do vértice");
+			edge = new AccessEdge("wordsInSequence");
+			
 			vertex.createVertex(next);
 			lastWord = next;
 			System.out.println("commitou primeiro vertice. anterior");
@@ -34,6 +40,7 @@ public class Manipulador {
 				conn.commit();
 				lastWord = nextWord;
 			}catch(Exception e){
+				System.out.println("deu errado!");
 				conn.rollback();
 			}
 		}

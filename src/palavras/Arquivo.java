@@ -24,8 +24,8 @@ public class Arquivo {
 			
 			System.out.println("Scaniou");
 			while(scanner.hasNext() ){
-				manipulador.verificaPoderIncluirNoBD(scanner.next());
-				System.out.println(scanner.next());
+				System.out.println("tem palavra");
+				manipulador.includesInSequence(scanner.next());
 			}
 			
 		}catch(Exception e){
