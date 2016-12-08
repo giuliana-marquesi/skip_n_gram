@@ -58,7 +58,9 @@ public class Arquivo {
 			while(scanner.hasNext() ){
 				i++;
 				System.out.println("tem palavra");
+				
 				String cleanWord = cleaningWord(scanner.next());
+				
 				if(isWord(cleanWord)) {
 					if(controladorDeSelects < qtdSelect) {
 						seleciona();
