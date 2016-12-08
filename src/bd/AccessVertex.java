@@ -9,35 +9,46 @@ public class AccessVertex {
 	private String vertexName;
 	
 	protected AccessVertex(){
-		System.out.println("instanciou AccessEdge pelo AccesEdge");
+		//System.out.println("instanciou o da aresta");
 	}
 
 	public AccessVertex(String string, OrientGraph db) {
 		// TODO Auto-generated constructor stub
-		System.out.println("instanciou AccessVertex. Nome da classe: "+ string);
 		graph = db;
 		vertexName = string;
-		//graph.commit();
-		graph.createVertexType(vertexName);
-		System.out.println("criou mesmo a classe do vertice");
-		//graph.commit();
+		try{
+			graph.createVertexType(vertexName);
+			graph.commit();
+		}catch (Exception e){
+			graph.rollback();
+		}
+		//System.out.println("instanciou o accessvertex");
 	}
 
 	public void createVertex(String next) {
 		// TODO Auto-generated method stub
-		graph.addVertex("class:"+vertexName, "word", next);
-		//graph.commit();
+		try{
+			graph.addVertex("class:"+vertexName, "word", next);
+			graph.commit();
+			System.out.println("criou vértice");
+		}catch (Exception e){
+			graph.rollback();
+		}
 		
 	}
 	
-	protected Vertex getVertex(String string){
-		for( Vertex v : graph.getVertices(vertexName+".name", string)) {
-		    System.out.println("Found vertex: " + v);
-		    return v;
+	public Vertex getVertex(String string){
+		System.out.println("entrou no getVertex");
+		try{
+			for(Vertex v : graph.getVertices("Sequence.word", string)) {
+			    System.out.println("Found vertex: " + v);
+			    return v;
+			}
+		}catch (Exception e){
+			graph.rollback();
+			System.out.println("nao deu no get Vertice");
 		}
-		
 		return null;
-		
 	}
 
 }

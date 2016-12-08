@@ -23,26 +23,25 @@ public class Manipulador {
 
 	public void includesInSequence(String next) {
 		// TODO Auto-generated method stub
-		System.out.println("Palavra no manipulador sequence: " + next);
 		
 		if (lastWord == null){
-			System.out.println("entrou no if");
 			vertex = new AccessVertex("Sequence", db);
-			System.out.println("voltou da instanciação do vértice");
+			//db.commit();
 			edge = new AccessEdge("wordsInSequence", db);
-			
+			//db.commit();
 			vertex.createVertex(next);
 			lastWord = next;
-			System.out.println("commitou primeiro vertice. anterior");
-			db.commit();
+			//db.commit();
+			System.out.println("terminou no if");
 		}else{
-			System.out.println("entrou no else");
 			try{
+				//System.out.println("entrou no try do else");
 				String nextWord = next;
 				vertex.createVertex(nextWord);
 				edge.createEdge(lastWord,nextWord);
-				db.commit();
+				//db.commit();
 				lastWord = nextWord;
+				System.out.println("fez um ciclo de palavra");
 			}catch(Exception e){
 				System.out.println("deu errado!");
 				db.rollback();
